@@ -1,0 +1,19 @@
+$energy-label-base-size: 16px !default;
+$energy-label-font-family: 'Trebuchet MS', Arial, sans-serif !default;
+$energy-label-font-weight: normal !default;
+$energy-label-color: rgb(255, 255, 255) !default;
+
+$energy-label-class-label-count: 7 !default;
+$energy-label-class-label-colors: #33a357 #79b752 #c3d545 #fff12c #edb731 #d66f2c #cc232a !default;
+$energy-label-class-label-disabled: #999 !default;
+$energy-label-class-label-width: 20%;
+$energy-label-class-label-add-width: 4%;
+
+$energy-label-class-label-font-size: $energy-label-base-size !default;
+$energy-label-class-label-height: 1.8 * $energy-label-base-size !default;
+$energy-label-class-label-spacing: 0.3 * $energy-label-base-size !default;
+
+$energy-label-class-value-background: rgb(0, 0, 0) !default;
+$energy-label-class-value-font-size: 1.5 * $energy-label-base-size !default;
+$energy-label-class-value-height: 3 * $energy-label-base-size !default;
+$energy-label-class-value-width: 20%;

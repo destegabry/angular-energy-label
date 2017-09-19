@@ -1,0 +1,81 @@
+@import 'defaults';
+@import 'mixins';
+
+energy-label {
+  display: block;
+
+  .energy-label {
+    color: $energy-label-color;
+    font-family: $energy-label-font-family;
+    font-weight: $energy-label-font-weight;
+    padding: (($energy-label-class-value-height - $energy-label-class-label-height) / 2) 0;
+  }
+
+  .energy-class {
+    align-items: center;
+    display: flex;
+    margin: $energy-label-class-label-spacing 0;
+    height: $energy-label-class-label-height;
+    justify-content: space-between;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @for $i from 1 to $energy-label-class-label-count + 1 {
+      &:nth-child(#{$i}) {
+        .energy-class-label {
+          width: $energy-label-class-label-width + ($i - 1) * $energy-label-class-label-add-width;
+        }
+
+        &:not(.energy-class-disabled) {
+          .energy-class-label {
+            background: nth($energy-label-class-label-colors, $i);
+
+            &:not(.disabled)::after {
+              @include arrow('right', nth($energy-label-class-label-colors, $i), $energy-label-class-label-height / 2);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .energy-class-label,
+  .energy-class-value {
+    align-items: center;
+    display: flex;
+    position: relative;
+  }
+
+
+  .energy-class-label {
+    background: $energy-label-class-label-disabled;
+    font-size: $energy-label-class-label-font-size;
+    height: $energy-label-class-label-height;
+    padding-left: $energy-label-class-label-font-size;
+
+    &::after {
+      @include arrow('right', $energy-label-class-label-disabled, $energy-label-class-label-height / 2);
+      @include position(absolute, 0, -$energy-label-class-label-height / 2, 0, auto);
+      content: '';
+    }
+  }
+
+  .energy-class-value {
+    background: $energy-label-class-value-background;
+    font-size: $energy-label-class-value-font-size;
+    height: $energy-label-class-value-height;
+    width: $energy-label-class-value-width;
+
+    &::before {
+      @include arrow('left', $energy-label-class-value-background, $energy-label-class-value-height / 2);
+      @include position(absolute, 0, auto, 0, -$energy-label-class-value-height / 2);
+      content: '';
+    }
+  }
+}

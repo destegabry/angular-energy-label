@@ -1,0 +1,63 @@
+{
+  "name": "angular-energy-label",
+  "version": "0.0.1",
+  "description": "An EU Energy Label component for AngularJS 1.5+",
+  "main": "index.js",
+  "scripts": {
+    "build": "NODE_ENV=build webpack --progress --config webpack.config.build.js",
+    "start": "NODE_ENV=dev webpack-dev-server --progress --config webpack.config.dev.js",
+    "preversion": "npm run-script build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/destegabry/angular-energy-label.git"
+  },
+  "keywords": [
+    "EU Energy Label",
+    "Energy Label",
+    "AngularJS",
+    "Angular",
+    "SASS"
+  ],
+  "author": "Gabriele Destefanis <gabriele.destefanis@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/destegabry/angular-energy-label/issues"
+  },
+  "homepage": "https://github.com/destegabry/angular-energy-label#readme",
+  "dependencies": {
+    "angular": "1.5.x"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.1.4",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "css-loader": "^0.28.7",
+    "exports-loader": "^0.6.4",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "html-loader": "^0.4.5",
+    "html-webpack-plugin": "^2.30.1",
+    "node-sass": "^4.5.3",
+    "postcss-loader": "^2.0.6",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.8.2",
+    "xo": "^0.18.2"
+  },
+  "xo": {
+    "space": 2,
+    "envs": [
+      "browser"
+    ],
+    "globals": [
+      "angular"
+    ],
+    "import/no-unassigned-import": {
+      "allow": [
+        "demo/index.js"
+      ]
+    }
+  }
+}

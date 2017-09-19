@@ -1,0 +1,13 @@
+<div class="energy-label">
+  <div class="energy-class energy-class-label-{{::class}} energy-class-index-{{::$index}}"
+        ng-repeat="class in $ctrl.classList"
+        ng-class="{'energy-class-selected': class === $ctrl.value, 'energy-class-disabled': $ctrl.disabled}">
+    <div class="energy-class-label">
+      {{::class}}
+    </div>
+    <div class="energy-class-value"
+          ng-if="class === $ctrl.value">
+      {{::class}}
+    </div>
+  </div>
+</div>
