@@ -1,6 +1,3 @@
-@import 'defaults';
-@import 'mixins';
-
 energy-label {
   display: block;
 
@@ -37,7 +34,7 @@ energy-label {
             background: nth($energy-label-class-label-colors, $i);
 
             &:not(.disabled)::after {
-              @include arrow('right', nth($energy-label-class-label-colors, $i), $energy-label-class-label-height / 2);
+              @include triangle($energy-label-class-label-height, nth($energy-label-class-label-colors, $i), right);
             }
           }
         }
@@ -60,8 +57,8 @@ energy-label {
     padding-left: $energy-label-class-label-font-size;
 
     &::after {
-      @include arrow('right', $energy-label-class-label-disabled, $energy-label-class-label-height / 2);
-      @include position(absolute, 0, -$energy-label-class-label-height / 2, 0, auto);
+      @include triangle($energy-label-class-label-height, $energy-label-class-label-disabled, right);
+      @include position(absolute, 0 (-$energy-label-class-label-height / 2) 0 auto);
       content: '';
     }
   }
@@ -73,8 +70,8 @@ energy-label {
     width: $energy-label-class-value-width;
 
     &::before {
-      @include arrow('left', $energy-label-class-value-background, $energy-label-class-value-height / 2);
-      @include position(absolute, 0, auto, 0, -$energy-label-class-value-height / 2);
+      @include triangle($energy-label-class-value-height, $energy-label-class-value-background, left);
+      @include position(absolute, 0 auto 0 (-$energy-label-class-value-height / 2));
       content: '';
     }
   }

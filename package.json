@@ -4,8 +4,8 @@
   "description": "An EU Energy Label component for AngularJS 1.5+",
   "main": "index.js",
   "scripts": {
+    "dev": "NODE_ENV=dev webpack-dev-server --progress --config webpack.config.dev.js",
     "build": "NODE_ENV=build webpack --progress --config webpack.config.build.js",
-    "start": "NODE_ENV=dev webpack-dev-server --progress --config webpack.config.dev.js",
     "preversion": "npm run-script build"
   },
   "repository": {
@@ -26,7 +26,9 @@
   },
   "homepage": "https://github.com/destegabry/angular-energy-label#readme",
   "dependencies": {
-    "angular": "1.5.x"
+    "angular": "1.5.x",
+    "bourbon": "^4.3.4",
+    "clean-webpack-plugin": "^0.1.16"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.4",

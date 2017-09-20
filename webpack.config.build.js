@@ -1,57 +1,50 @@
 const path = require('path');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 // Is the current build a development build
 const IS_DEV = (process.env.NODE_ENV === 'dev');
 
 const dirNode = 'node_modules';
 const dirSrc = path.join(__dirname, 'src');
-const dirDemo = path.join(__dirname, 'demo');
+
+const pjson = require('./package.json');
 
 /**
  * Webpack Configuration
  */
 module.exports = {
+  devtool: 'source-map',
+  context: dirSrc,
   entry: {
-    bundle: dirDemo
+    'energy-label': ['index.js', 'index.scss']
   },
   resolve: {
     modules: [
       dirNode,
-      dirDemo,
       dirSrc
     ]
+  },
+  output: {
+    path: path.join(__dirname, 'dist'),
+    filename: `[name].${pjson.version}.js`
   },
   plugins: [
     new webpack.DefinePlugin({IS_DEV: IS_DEV}),
 
-    new webpack.ProvidePlugin({
-      angular: 'angular'
-    }),
-
-    new HtmlWebpackPlugin({
-      template: path.join(dirDemo, 'index.html'),
-      minify: {
-        collapseWhitespace: true,
-        removeComments: true,
-        minifyJS: true
-      }
-    }),
-
     new ExtractTextPlugin({
-      filename: 'styles/[name].[contenthash].css'
-    })
+      filename: `[name].${pjson.version}.css`
+    }),
+
+    new webpack.optimize.CommonsChunkPlugin({
+      names: ['vendor', 'manifest']
+    }),
+
+    new CleanWebpackPlugin(['dist'])
   ],
   module: {
     rules: [
-      // Angular
-      {
-        test: require.resolve('angular'),
-        loader: 'exports-loader?window.angular'
-      },
-
       // BABEL
       {
         test: /\.js$/,
@@ -93,17 +86,6 @@ module.exports = {
           ]
         })
       },
-
-      // IMAGES
-      {
-        test: /\.(jpe*g|png|gif|svg)$/,
-        loader: 'file-loader',
-        options: {
-          context: dirSrc,
-          name: '[path][name].[ext]'
-        }
-      },
-
       // HTML
       {
         test: /\.html$/,

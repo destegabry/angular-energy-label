@@ -1,5 +1,6 @@
 import './index.scss';
-import '../src/energy-label.component';
+import '../dist/manifest.0.0.1';
+import '../dist/energy-label.0.0.1';
 
 angular.module('demo', ['EnergyLabel'])
   .config(demoConfiguration)
