@@ -1,6 +1,6 @@
 {
   "name": "angular-energy-label",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "An EU Energy Label component for AngularJS 1.5+",
   "main": "dist/angular-energy-label.js",
   "scripts": {
