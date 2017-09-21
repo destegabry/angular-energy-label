@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "gulp serve:examples",
     "build": "gulp",
-    "preversion": "npm run-script build && git add dist/.",
-    "postversion": "npm publish"
+    "postversion": "gulp version && npm publish"
   },
   "repository": {
     "type": "git",
@@ -44,6 +43,7 @@
     "gulp-clean": "^0.3.2",
     "gulp-clean-css": "^3.9.0",
     "gulp-concat": "^2.6.1",
+    "gulp-git-streamed": "^2.4.0",
     "gulp-header": "^1.8.9",
     "gulp-iife": "^0.3.0",
     "gulp-sass": "^3.1.0",

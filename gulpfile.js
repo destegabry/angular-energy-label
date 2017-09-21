@@ -12,6 +12,7 @@ const uglify = require('gulp-uglify');
 const babel = require('gulp-babel');
 const embedTemplates = require('gulp-angular-embed-templates');
 const iife = require('gulp-iife');
+const git = require('gulp-git-streamed');
 
 const pjson = require('./package.json');
 
@@ -115,7 +116,19 @@ gulp.task('examples', () => {
   gulp.watch(config.path.src).on('change', gulp.series('default'));
 });
 
+gulp.task('git', () => {
+  const semver = pjson.version;
+  const message = `Released version ${semver}`;
+
+  return gulp.src(['package.json', path.join(config.path.dist, '*')])
+    .pipe(git.commit(message))
+    .pipe(git.tag(`v${semver}`, message));
+});
+
 gulp.task('build', gulp.parallel('sass', 'css', 'js'));
+
 gulp.task('default', gulp.series('clean', 'build'));
 
 gulp.task('serve:examples', gulp.series('default', 'examples'));
+
+gulp.task('version', gulp.series('clean', 'build', 'git'));
