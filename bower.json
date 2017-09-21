@@ -1,0 +1,25 @@
+{
+  "name": "angular-energy-label",
+  "description": "An EU Energy Label component for AngularJS 1.5+",
+  "main": [
+    "dist/angular-energy-label.js",
+    "dist/angular-energy-label.css"
+  ],
+  "authors": [
+    "Gabriele Destefanis <gabriele.destefanis@gmail.com> (http://destefanis.eu/)"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "EU Energy Label",
+    "Energy Label",
+    "AngularJS",
+    "Angular",
+    "SASS"
+  ],
+  "homepage": "https://github.com/destegabry/angular-energy-label",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "examples"
+  ]
+}

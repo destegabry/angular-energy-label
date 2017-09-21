@@ -5,13 +5,18 @@ A simple AngularJS (1.5+) component to display an [EU Energy Label](http://europ
 ## Install
 
 **NPM**
-```
+```sh
 npm install angular-energy-label --save
 ```
 
 **Yarn**
-```
+```sh
 yarn add angular-energy-label
+```
+
+**Bower**
+```sh
+bower install angular-energy-label
 ```
 
 ## Quick Start
@@ -71,14 +76,14 @@ install it in your project (just `npm install bourbon`).
 ## Examples
 
 To run the provided examples clone the repository and install:
-```
+```sh
 git clone git@github.com:destegabry/angular-energy-label.git
 cd angular-energy-label
 npm install -g gulp-cli && npm install
 ```
 
 Then run
-```
+```sh
 gulp serve:examples
 ```
 
@@ -89,6 +94,5 @@ Just play with the code, the page will be reload automagically.
 ## Todo
 
 - add sourcemaps in builds
-- add support to Bower
 - implement unit test
 - SASS mixin
