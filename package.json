@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "gulp serve:examples",
     "build": "gulp",
-    "preversion": "npm run-script build && git add dist/."
+    "preversion": "npm run-script build && git add dist/.",
+    "postversion": "npm publish"
   },
   "repository": {
     "type": "git",
