@@ -2,11 +2,11 @@
   "name": "angular-energy-label",
   "version": "0.0.0",
   "description": "An EU Energy Label component for AngularJS 1.5+",
-  "main": "index.js",
+  "main": "dist/angular-energy-label.js",
   "scripts": {
-    "dev": "NODE_ENV=dev webpack-dev-server --progress --config webpack.config.dev.js",
-    "build": "NODE_ENV=build webpack --progress --config webpack.config.build.js",
-    "preversion": "npm run-script build"
+    "dev": "gulp serve:examples",
+    "build": "gulp",
+    "preversion": "npm run-script build && git add dist/."
   },
   "repository": {
     "type": "git",
