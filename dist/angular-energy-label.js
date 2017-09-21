@@ -1,7 +1,7 @@
 /**
  * angular-energy-label - An EU Energy Label component for AngularJS 1.5+
- * Version v0.0.1
- * Homepage: https://github.com/destegabry/angular-energy-label.git
+ * Version v0.0.0
+ * Homepage: https://github.com/destegabry/angular-energy-label
  * Author: Gabriele Destefanis <gabriele.destefanis@gmail.com> (http://destefanis.eu/)
  */
 ;(function() {
