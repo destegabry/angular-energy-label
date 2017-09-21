@@ -1,0 +1,104 @@
+/**
+ * angular-energy-label - An EU Energy Label component for AngularJS 1.5+
+ * Version v0.0.1
+ * Homepage: https://github.com/destegabry/angular-energy-label.git
+ * Author: Gabriele Destefanis <gabriele.destefanis@gmail.com> (http://destefanis.eu/)
+ */
+$energy-label-base-size: 16px !default;
+$energy-label-font-family: 'Trebuchet MS', Arial, sans-serif !default;
+$energy-label-font-weight: normal !default;
+$energy-label-color: rgb(255, 255, 255) !default;
+
+$energy-label-class-label-count: 7 !default;
+$energy-label-class-label-colors: #33a357 #79b752 #c3d545 #fff12c #edb731 #d66f2c #cc232a !default;
+$energy-label-class-label-disabled: #999 !default;
+$energy-label-class-label-width: 20%!default;
+$energy-label-class-label-add-width: 4%!default;
+
+$energy-label-class-label-font-size: $energy-label-base-size !default;
+$energy-label-class-label-height: 1.8 * $energy-label-base-size !default;
+$energy-label-class-label-spacing: 0.3 * $energy-label-base-size !default;
+
+$energy-label-class-value-background: rgb(0, 0, 0) !default;
+$energy-label-class-value-font-size: 1.5 * $energy-label-base-size !default;
+$energy-label-class-value-height: 3 * $energy-label-base-size !default;
+$energy-label-class-value-width: 20%;
+
+energy-label {
+  display: block;
+
+  .energy-label {
+    color: $energy-label-color;
+    font-family: $energy-label-font-family;
+    font-weight: $energy-label-font-weight;
+    padding: (($energy-label-class-value-height - $energy-label-class-label-height) / 2) 0;
+  }
+
+  .energy-class {
+    align-items: center;
+    display: flex;
+    margin: $energy-label-class-label-spacing 0;
+    height: $energy-label-class-label-height;
+    justify-content: space-between;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @for $i from 1 to $energy-label-class-label-count + 1 {
+      &:nth-child(#{$i}) {
+        .energy-class-label {
+          width: $energy-label-class-label-width + ($i - 1) * $energy-label-class-label-add-width;
+        }
+
+        &:not(.energy-class-disabled) {
+          .energy-class-label {
+            background: nth($energy-label-class-label-colors, $i);
+
+            &:not(.disabled)::after {
+              @include triangle($energy-label-class-label-height, nth($energy-label-class-label-colors, $i), right);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .energy-class-label,
+  .energy-class-value {
+    align-items: center;
+    display: flex;
+    position: relative;
+  }
+
+
+  .energy-class-label {
+    background: $energy-label-class-label-disabled;
+    font-size: $energy-label-class-label-font-size;
+    height: $energy-label-class-label-height;
+    padding-left: $energy-label-class-label-font-size;
+
+    &::after {
+      @include triangle($energy-label-class-label-height, $energy-label-class-label-disabled, right);
+      @include position(absolute, 0 (-$energy-label-class-label-height / 2) 0 auto);
+      content: '';
+    }
+  }
+
+  .energy-class-value {
+    background: $energy-label-class-value-background;
+    font-size: $energy-label-class-value-font-size;
+    height: $energy-label-class-value-height;
+    width: $energy-label-class-value-width;
+
+    &::before {
+      @include triangle($energy-label-class-value-height, $energy-label-class-value-background, left);
+      @include position(absolute, 0 auto 0 (-$energy-label-class-value-height / 2));
+      content: '';
+    }
+  }
+}

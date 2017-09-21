@@ -50,7 +50,45 @@ angular.module('demo', ['EnergyLabel'])
   }]);
 ```
 
+You can customize colors and bars width using CSS or (better) with SASS:
+```sass
+@import '../../node_modules/bourbon/app/assets/stylesheets/bourbon';
+
+$energy-label-class-label-count: 11;
+$energy-label-class-label-colors: #c5cae9 #9fa8da #7986cb
+                                  #5c6bc0 #3f51b5 #3949ab
+                                  #303f9f #283593 #1a237e
+                                  #121e61 #020933;
+$energy-label-class-label-disabled: #f3c1c1;
+$energy-label-class-label-width: 15%;
+$energy-label-class-label-add-width: 3%;
+
+@import '../../dist/angular-energy-label.scss';
+```
+Please note that [Bourbon](http://bourbon.io) is a required peer dependency when using SASS, you have to
+install it in your project (just `npm install bourbon`).
+
+## Examples
+
+To run the provided examples clone the repository and install:
+```
+git clone git@github.com:destegabry/angular-energy-label.git
+cd angular-energy-label
+npm install -g gulp-cli && npm install
+```
+
+Then run
+```
+gulp serve:examples
+```
+
+Open your browser to the URL output in the terminal (defaults to [http://localhost:3000](http://localhost:3000)).
+
+Just play with the code, the page will be reload automagically.
+
 ## Todo
 
+- add sourcemaps in builds
 - add support to Bower
 - implement unit test
+- SASS mixin

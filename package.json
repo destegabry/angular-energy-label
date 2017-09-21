@@ -1,6 +1,6 @@
 {
   "name": "angular-energy-label",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "An EU Energy Label component for AngularJS 1.5+",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/destegabry/angular-energy-label.git"
+    "url": "https://github.com/destegabry/angular-energy-label.git"
   },
   "keywords": [
     "EU Energy Label",
@@ -19,33 +19,35 @@
     "Angular",
     "SASS"
   ],
-  "author": "Gabriele Destefanis <gabriele.destefanis@gmail.com>",
+  "author": "Gabriele Destefanis <gabriele.destefanis@gmail.com> (http://destefanis.eu/)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/destegabry/angular-energy-label/issues"
   },
-  "homepage": "https://github.com/destegabry/angular-energy-label#readme",
+  "homepage": "https://github.com/destegabry/angular-energy-label",
   "dependencies": {
-    "angular": "1.5.x",
-    "bourbon": "^4.3.4",
-    "clean-webpack-plugin": "^0.1.16"
+    "angular": "^1.5.0"
+  },
+  "peerDependencies": {
+    "bourbon": "^4.3.4"
   },
   "devDependencies": {
-    "autoprefixer": "^7.1.4",
     "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
-    "css-loader": "^0.28.7",
-    "exports-loader": "^0.6.4",
-    "extract-text-webpack-plugin": "^3.0.0",
-    "html-loader": "^0.4.5",
-    "html-webpack-plugin": "^2.30.1",
-    "node-sass": "^4.5.3",
-    "postcss-loader": "^2.0.6",
-    "sass-loader": "^6.0.6",
-    "style-loader": "^0.18.2",
-    "webpack": "^3.6.0",
-    "webpack-dev-server": "^2.8.2",
+    "bourbon": "^4.3.4",
+    "browser-sync": "^2.18.13",
+    "gulp": "gulpjs/gulp.git#4.0",
+    "gulp-angular-embed-templates": "^2.3.0",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-babel": "^7.0.0",
+    "gulp-clean": "^0.3.2",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-header": "^1.8.9",
+    "gulp-iife": "^0.3.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-uglify": "^3.0.0",
     "xo": "^0.18.2"
   },
   "xo": {

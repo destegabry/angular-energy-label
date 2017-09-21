@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>EU Energy Label - Custom colors and widths</title>
+  <link rel="stylesheet" href="/index.css">
+  <link rel="stylesheet" href="./custom-colors.css">
+  <link rel="stylesheet" href="/angular-energy-label/angular-energy-label.min.css">
+</head>
+<body ng-app="demo">
+  <div class="demo" ng-controller="DemoController as demoCtrl">
+    <h1>EU Energy Label - Custom colors and widths</h1>
+    <p>You can customize bar colors and widths overriding the CSS:</p>
+    <pre>
+energy-label .energy-class:nth-child([n]) .energy-class-label {
+  background: [width];
+}
+
+energy-label .energy-class:nth-child([n]):not(.energy-class-disabled)
+.energy-class-label {
+  background: [color];
+}
+
+energy-label .energy-class:nth-child([n]):not(.energy-class-disabled)
+.energy-class-label:not(.disabled)::after {
+  border-left-color: [color];
+}
+    </pre>
+    <p>Where <em>[n]</em> is the 1-based index of the bar,
+      <em>[color]</em> a valid CSS color definition,
+      <em>[width]</em> a valid CSS width.
+    </p>
+    <div class="flex">
+      <energy-label class="teal" value="'A'"></energy-label>
+      <energy-label class="indigo" value="'B'" class-list="demoCtrl.customEnergyClassList"></energy-label>
+    </div>
+    <p>To customize the style using SASS, see the <a href="/04-sass">next example</a>.</p>
+    <a href="/">&lt; Back to index</a>
+  </div>
+
+  <script src="/node_modules/angular/angular.min.js"></script>
+  <script src="/angular-energy-label/angular-energy-label.min.js"></script>
+  <script src="./index.js"></script>
+</body>
+</html>

@@ -1,7 +1,3 @@
-import './index.scss';
-import '../dist/manifest.0.0.1';
-import '../dist/energy-label.0.0.1';
-
 angular.module('demo', ['EnergyLabel'])
   .config(demoConfiguration)
   .controller('DemoController', demoController);
@@ -20,7 +16,7 @@ demoController.$inject = ['DEFAULT_ENERGY_CLASS_LIST'];
 function demoController(DEFAULT_ENERGY_CLASS_LIST) {
   const vm = this;
   vm.availableClassList = availableClassList;
-  vm.selectedClass = DEFAULT_ENERGY_CLASS_LIST[0];
+  vm.selectedClass = availableClassList[2];
 
   vm.originalClassList = DEFAULT_ENERGY_CLASS_LIST;
   vm.customClassList = vm.availableClassList.slice(1, vm.availableClassList.length - 2);

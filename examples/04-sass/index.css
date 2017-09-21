@@ -1,0 +1,312 @@
+/**
+ * angular-energy-label - An EU Energy Label component for AngularJS 1.5+
+ * Version v0.0.1
+ * Homepage: https://github.com/destegabry/angular-energy-label.git
+ * Author: Gabriele Destefanis <gabriele.destefanis@gmail.com> (http://destefanis.eu/)
+ */
+energy-label {
+  display: block;
+}
+
+energy-label .energy-label {
+  color: white;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  font-weight: normal;
+  padding: 9.6px 0;
+}
+
+energy-label .energy-class {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 4.8px 0;
+  height: 28.8px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+energy-label .energy-class:first-child {
+  margin-top: 0;
+}
+
+energy-label .energy-class:last-child {
+  margin-bottom: 0;
+}
+
+energy-label .energy-class:nth-child(1) .energy-class-label {
+  width: 15%;
+}
+
+energy-label .energy-class:nth-child(1):not(.energy-class-disabled) .energy-class-label {
+  background: #c5cae9;
+}
+
+energy-label .energy-class:nth-child(1):not(.energy-class-disabled) .energy-class-label:not(.disabled)::after {
+  height: 0;
+  width: 0;
+  border-bottom: 14.4px solid transparent;
+  border-left: 14.4px solid #c5cae9;
+  border-top: 14.4px solid transparent;
+}
+
+energy-label .energy-class:nth-child(2) .energy-class-label {
+  width: 18%;
+}
+
+energy-label .energy-class:nth-child(2):not(.energy-class-disabled) .energy-class-label {
+  background: #9fa8da;
+}
+
+energy-label .energy-class:nth-child(2):not(.energy-class-disabled) .energy-class-label:not(.disabled)::after {
+  height: 0;
+  width: 0;
+  border-bottom: 14.4px solid transparent;
+  border-left: 14.4px solid #9fa8da;
+  border-top: 14.4px solid transparent;
+}
+
+energy-label .energy-class:nth-child(3) .energy-class-label {
+  width: 21%;
+}
+
+energy-label .energy-class:nth-child(3):not(.energy-class-disabled) .energy-class-label {
+  background: #7986cb;
+}
+
+energy-label .energy-class:nth-child(3):not(.energy-class-disabled) .energy-class-label:not(.disabled)::after {
+  height: 0;
+  width: 0;
+  border-bottom: 14.4px solid transparent;
+  border-left: 14.4px solid #7986cb;
+  border-top: 14.4px solid transparent;
+}
+
+energy-label .energy-class:nth-child(4) .energy-class-label {
+  width: 24%;
+}
+
+energy-label .energy-class:nth-child(4):not(.energy-class-disabled) .energy-class-label {
+  background: #5c6bc0;
+}
+
+energy-label .energy-class:nth-child(4):not(.energy-class-disabled) .energy-class-label:not(.disabled)::after {
+  height: 0;
+  width: 0;
+  border-bottom: 14.4px solid transparent;
+  border-left: 14.4px solid #5c6bc0;
+  border-top: 14.4px solid transparent;
+}
+
+energy-label .energy-class:nth-child(5) .energy-class-label {
+  width: 27%;
+}
+
+energy-label .energy-class:nth-child(5):not(.energy-class-disabled) .energy-class-label {
+  background: #3f51b5;
+}
+
+energy-label .energy-class:nth-child(5):not(.energy-class-disabled) .energy-class-label:not(.disabled)::after {
+  height: 0;
+  width: 0;
+  border-bottom: 14.4px solid transparent;
+  border-left: 14.4px solid #3f51b5;
+  border-top: 14.4px solid transparent;
+}
+
+energy-label .energy-class:nth-child(6) .energy-class-label {
+  width: 30%;
+}
+
+energy-label .energy-class:nth-child(6):not(.energy-class-disabled) .energy-class-label {
+  background: #3949ab;
+}
+
+energy-label .energy-class:nth-child(6):not(.energy-class-disabled) .energy-class-label:not(.disabled)::after {
+  height: 0;
+  width: 0;
+  border-bottom: 14.4px solid transparent;
+  border-left: 14.4px solid #3949ab;
+  border-top: 14.4px solid transparent;
+}
+
+energy-label .energy-class:nth-child(7) .energy-class-label {
+  width: 33%;
+}
+
+energy-label .energy-class:nth-child(7):not(.energy-class-disabled) .energy-class-label {
+  background: #303f9f;
+}
+
+energy-label .energy-class:nth-child(7):not(.energy-class-disabled) .energy-class-label:not(.disabled)::after {
+  height: 0;
+  width: 0;
+  border-bottom: 14.4px solid transparent;
+  border-left: 14.4px solid #303f9f;
+  border-top: 14.4px solid transparent;
+}
+
+energy-label .energy-class:nth-child(8) .energy-class-label {
+  width: 36%;
+}
+
+energy-label .energy-class:nth-child(8):not(.energy-class-disabled) .energy-class-label {
+  background: #283593;
+}
+
+energy-label .energy-class:nth-child(8):not(.energy-class-disabled) .energy-class-label:not(.disabled)::after {
+  height: 0;
+  width: 0;
+  border-bottom: 14.4px solid transparent;
+  border-left: 14.4px solid #283593;
+  border-top: 14.4px solid transparent;
+}
+
+energy-label .energy-class:nth-child(9) .energy-class-label {
+  width: 39%;
+}
+
+energy-label .energy-class:nth-child(9):not(.energy-class-disabled) .energy-class-label {
+  background: #1a237e;
+}
+
+energy-label .energy-class:nth-child(9):not(.energy-class-disabled) .energy-class-label:not(.disabled)::after {
+  height: 0;
+  width: 0;
+  border-bottom: 14.4px solid transparent;
+  border-left: 14.4px solid #1a237e;
+  border-top: 14.4px solid transparent;
+}
+
+energy-label .energy-class:nth-child(10) .energy-class-label {
+  width: 42%;
+}
+
+energy-label .energy-class:nth-child(10):not(.energy-class-disabled) .energy-class-label {
+  background: #121e61;
+}
+
+energy-label .energy-class:nth-child(10):not(.energy-class-disabled) .energy-class-label:not(.disabled)::after {
+  height: 0;
+  width: 0;
+  border-bottom: 14.4px solid transparent;
+  border-left: 14.4px solid #121e61;
+  border-top: 14.4px solid transparent;
+}
+
+energy-label .energy-class:nth-child(11) .energy-class-label {
+  width: 45%;
+}
+
+energy-label .energy-class:nth-child(11):not(.energy-class-disabled) .energy-class-label {
+  background: #020933;
+}
+
+energy-label .energy-class:nth-child(11):not(.energy-class-disabled) .energy-class-label:not(.disabled)::after {
+  height: 0;
+  width: 0;
+  border-bottom: 14.4px solid transparent;
+  border-left: 14.4px solid #020933;
+  border-top: 14.4px solid transparent;
+}
+
+energy-label .energy-class-label,
+energy-label .energy-class-value {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+energy-label .energy-class-label {
+  background: #f3c1c1;
+  font-size: 16px;
+  height: 28.8px;
+  padding-left: 16px;
+}
+
+energy-label .energy-class-label::after {
+  height: 0;
+  width: 0;
+  border-bottom: 14.4px solid transparent;
+  border-left: 14.4px solid #f3c1c1;
+  border-top: 14.4px solid transparent;
+  position: absolute;
+  top: 0;
+  right: -14.4px;
+  bottom: 0;
+  left: auto;
+  content: '';
+}
+
+energy-label .energy-class-value {
+  background: black;
+  font-size: 24px;
+  height: 48px;
+  width: 20%;
+}
+
+energy-label .energy-class-value::before {
+  height: 0;
+  width: 0;
+  border-bottom: 24px solid transparent;
+  border-right: 24px solid black;
+  border-top: 24px solid transparent;
+  position: absolute;
+  top: 0;
+  right: auto;
+  bottom: 0;
+  left: -24px;
+  content: '';
+}
+
+body,
+html {
+  background: #ddd;
+  margin: 0;
+  padding: 0;
+}
+
+em {
+  font-style: normal;
+  font-family: monospace;
+}
+
+.demo {
+  background: #fff;
+  display: block;
+  margin: 1em auto;
+  padding: 1em 2em;
+  max-width: 660px;
+  width: 80%;
+}
+
+.flex {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.flex > * {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 0%;
+          flex: 1 0 0%;
+  min-width: 200px;
+}
+
+energy-label {
+  border: 1px solid black;
+  margin: 5px;
+  padding: 5px;
+}

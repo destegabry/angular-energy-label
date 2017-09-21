@@ -1,3 +1,2 @@
-require('./energy-label/energy-label.module');
-require('./energy-label/energy-label-config.provider');
-require('./energy-label/energy-label.component');
+angular.module('EnergyLabel', [])
+  .constant('DEFAULT_ENERGY_CLASS_LIST', 'ABCDEFG'.split(''));

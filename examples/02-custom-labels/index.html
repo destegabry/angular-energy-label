@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>EU Energy Label - Custom labels</title>
+  <link rel="stylesheet" href="/index.css">
+  <link rel="stylesheet" href="/angular-energy-label/angular-energy-label.min.css">
+</head>
+<body ng-app="demo">
+  <div class="demo" ng-controller="DemoController as demoCtrl">
+    <h1>EU Energy Label - Custom labels</h1>
+    <p>
+      To customize the Energy Class list globally passing an array of strings to the
+      <em>energyLabelConfigProvider.setEnergyClassList</em> function in the config phase:
+    </p>
+    <div class="flex">
+      <p>
+        Select the Energy Class:
+        <select ng-model="demoCtrl.selectedEnergyClass"
+                ng-options="energyClass for energyClass in demoCtrl.availableEnergyClassList">
+          <option></option>
+        </select>
+      </p>
+      <energy-label value="demoCtrl.selectedEnergyClass"></energy-label>
+    </div>
+
+    <p>
+      Or customize the Energy Class list locally passing an array of strings
+      to the component using the <em>class-list</em> binding:
+    </p>
+    <div class="flex">
+      <p>
+        Select the Energy Class:
+        <select ng-model="demoCtrl.anotherEnergyClass"
+                ng-options="energyClass for energyClass in demoCtrl.customEnergyClassList">
+          <option></option>
+        </select>
+      </p>
+      <energy-label value="demoCtrl.anotherEnergyClass"
+                    class-list="demoCtrl.customEnergyClassList"></energy-label>
+    </div>
+    <p>To customize the colors and bar widths, see the <a href="/03-custom-colors-widths">next example</a>.</p>
+    <a href="/">&lt; Back to index</a>
+  </div>
+
+
+  <script src="/node_modules/angular/angular.min.js"></script>
+  <script src="/angular-energy-label/angular-energy-label.min.js"></script>
+  <script src="./index.js"></script>
+</body>
+</html>

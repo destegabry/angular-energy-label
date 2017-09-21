@@ -4,7 +4,7 @@ angular.module('EnergyLabel')
       value: '<',
       classList: '<?'
     },
-    template: require('./energy-label.template.html'),
+    templateUrl: 'energy-label.template.html',
     controller: energyClassController
   });
 

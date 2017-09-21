@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>EU Energy Label - Basic usage</title>
+  <link rel="stylesheet" href="/index.css">
+  <link rel="stylesheet" href="/angular-energy-label/angular-energy-label.min.css">
+</head>
+<body ng-app="demo">
+  <div class="demo" ng-controller="DemoController as demoCtrl">
+    <h1>EU Energy Label - Basic usage</h1>
+    <p>You can draw Energy Labels with static values as strings:</p>
+    <div class="flex">
+      <energy-label value="'A'"></energy-label>
+      <energy-label value="'B'"></energy-label>
+    </div>
+    <p>Or use the power of data binding:</p>
+    <div class="flex">
+      <p>
+        Select the Energy Class:
+        <select ng-model="demoCtrl.selectedEnergyClass"
+                ng-options="energyClass for energyClass in demoCtrl.availableEnergyClassList">
+          <option></option>
+        </select>
+      </p>
+      <energy-label value="demoCtrl.selectedEnergyClass"></energy-label>
+    </div>
+    <p>To customize the label values, see the <a href="/02-custom-labels">next example</a>.</p>
+    <a href="/">&lt; Back to index</a>
+  </div>
+
+  <script src="/node_modules/angular/angular.min.js"></script>
+  <script src="/angular-energy-label/angular-energy-label.min.js"></script>
+  <script src="./index.js"></script>
+</body>
+</html>

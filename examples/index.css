@@ -1,0 +1,41 @@
+body,
+html {
+  background: #ddd;
+  margin: 0;
+  padding: 0;
+}
+
+em {
+  font-style: normal;
+  font-family: monospace;
+}
+
+li {
+  margin-bottom: .7em;
+}
+
+.demo {
+  background: #fff;
+  display: block;
+  margin: 1em auto;
+  padding: 1em 2em;
+  max-width: 660px;
+  width: 80%;
+}
+
+.flex {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex  > * {
+  flex: 1 0 0%;
+  min-width: 200px;
+}
+
+energy-label {
+  border: 1px solid black;
+  margin: 5px;
+  padding: 5px;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>EU Energy Label - Using SASS</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body ng-app="demo">
+    <div class="demo" ng-controller="DemoController as demoCtrl">
+    <h1>EU Energy Label - Using SASS</h1>
+    <p>
+      To the Energy Labels with SASS you have to install <a href="http://bourbon.io/" target="_blank">Bourbon</a>
+      in your project (<em>npm install bourbon</em>) and import it <strong>strong</strong> <em>angular-energy-labels.scss</em>.
+    </p>
+    <p>
+      You can change the default Energy Label rendering setting some
+      values <strong>before</strong> importing <em>angular-energy-labels.scss</em>.
+    </p>
+    <pre>
+@import 'node_modules/bourbon/app/assets/stylesheets/bourbon';
+
+$energy-label-class-label-count: 11;
+$energy-label-class-label-colors: #c5cae9 #9fa8da #7986cb
+                                  #5c6bc0 #3f51b5 #3949ab
+                                  #303f9f #283593 #1a237e
+                                  #121e61 #020933;
+$energy-label-class-label-disabled: #f3c1c1;
+$energy-label-class-label-width: 15%;
+$energy-label-class-label-add-width: 3%;
+
+@import 'node_modules/angular-energy-label/angular-energy-label.scss';
+    </pre>
+    <p>Refer to the source code for an exhaustive list of all the supported default values.</p>
+    <p>
+        Choose an Energetic Consumption Value:
+        <select ng-model="demoCtrl.selectedClass"
+                ng-options="class for class in demoCtrl.availableClassList"></select>
+    </p>
+    <div class="flex">
+      <energy-label value="demoCtrl.selectedClass"></energy-label>
+      <energy-label value="demoCtrl.selectedClass" class-list="demoCtrl.originalClassList"></energy-label>
+      <energy-label value="demoCtrl.selectedClass" class-list="demoCtrl.customClassList"></energy-label>
+      <energy-label value="demoCtrl.selectedClass" class-list="demoCtrl.availableClassList"></energy-label>
+    </div>
+  </div>
+  <script src="/node_modules/angular/angular.min.js"></script>
+  <script src="/angular-energy-label/angular-energy-label.min.js"></script>
+  <script src="./index.js"></script>
+</body>
+</html>
